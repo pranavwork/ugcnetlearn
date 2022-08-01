@@ -52,7 +52,11 @@ setInterval(function () {
   window.Tawk_API.endChat();
 }, 60000);
   
-
+// On chat end
+window.Tawk_API.onChatEnded = function(){
+    window.Tawk_API.hideWidget();
+};
+  
 window.Tawk_API.onStatusChange = function(status){
     console.log('status = ' + status);
 };
