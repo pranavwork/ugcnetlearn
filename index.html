@@ -8,7 +8,7 @@
 function deleteCookie(name) {
   document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
-function (name) {
+function deleteSubDomainCookie(name) {
   document.cookie = name +'=; Path=/; domain=.ugcnetlearn.in; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 setTimeout(()=> {
