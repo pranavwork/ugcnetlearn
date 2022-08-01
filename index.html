@@ -40,9 +40,7 @@ window.Tawk_API = window.Tawk_API || {};
 // End chat when widget is minimized
 window.Tawk_API.onChatMinimized = function(){
     window.Tawk_API.endChat();
-    setTimeout(function () {
-      window.Tawk_API.hideWidget();
-    }, 1000);
+    document.querySelector('[class^="widget-"]').remove();
 };
   
 // End chat when agent leaves
