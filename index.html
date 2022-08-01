@@ -35,22 +35,27 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
   
 <script>
+    
 window.Tawk_API = window.Tawk_API || {};
+  
+function unLoadWidget() {
+  window.Tawk_API.endChat();
+  document.querySelector('[class^="widget-"]').remove();
+}
 
 // End chat when widget is minimized
 window.Tawk_API.onChatMinimized = function(){
-    window.Tawk_API.endChat();
-    document.querySelector('[class^="widget-"]').remove();
+   unLoadWidget();
 };
   
 // End chat when agent leaves
 window.Tawk_API.onAgentLeaveChat = function(){
-  window.Tawk_API.endChat();
+  unLoadWidget();
 };
   
 // End chat every 60s
 setInterval(function () {
-  window.Tawk_API.endChat();
+  unLoadWidget();
 }, 60000);
   
 
