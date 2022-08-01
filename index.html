@@ -6,14 +6,17 @@
   
 <script>
 function deleteCookie(name) {
+  document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+}
+function (name) {
   document.cookie = name +'=; Path=/; domain=.ugcnetlearn.in; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 setTimeout(()=> {
   deleteCookie('twk_idm_key');
-  deleteCookie('twk_uuid_62e6bd5437898912e960821b');
+  deleteSubDomainCookie('twk_uuid_62e6bd5437898912e960821b');
   deleteCookie('TawkConnectionTime');
   console.log('Cookies Cleared!');
-}, 10000);
+}, 5000);
 </script>
 
 
