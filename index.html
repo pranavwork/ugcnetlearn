@@ -40,7 +40,11 @@ window.Tawk_API = window.Tawk_API || {};
 // End chat when widget is minimized
 window.Tawk_API.onChatMinimized = function(){
     window.Tawk_API.endChat();
-    window.Tawk_API.hideWidget();
+};
+  
+// End chat when agent leaves
+window.Tawk_API.onAgentLeaveChat = function(){
+  window.Tawk_API.endChat();
 };
   
 // End chat every 60s
